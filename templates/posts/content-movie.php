@@ -23,9 +23,13 @@
 				<ul>
 					<li><strong>Language:</strong> <?php echo $movie_meta['sp_language'][0]; ?></li>
 					<li><strong>Rating:</strong> <?php echo strtoupper( $movie_meta['sp_movie_rating'][0] ); ?></li>
-					<li><strong>Runtime:</strong> <?php echo $movie_meta['sp_runtime'][0]; ?> Minutes</li>
+					<li><strong>Runtime:</strong> <?php echo (!empty($movie_meta['sp_runtime'][0])) ? $movie_meta['sp_runtime'][0] . ' Minutes' : 'Not available'; ?></li>
+                    <?php if ( $movie_meta['sp_genre'][0] != '' ) : ?>
 					<li><strong>Genre:</strong> <?php echo $movie_meta['sp_genre'][0]; ?></li>
+                    <?php endif; ?>
+                    <?php if ( $movie_meta['sp_content_advice'][0] != '' ) : ?>
 					<li><strong>Content Advice:</strong> <?php echo $movie_meta['sp_content_advice'][0]; ?></li>
+                    <?php endif; ?>
 					<?php
 						$showtimes = unserialize($movie_meta['sp_showtimes'][0]); 
 						if ( !empty($showtimes) ) : ?>
@@ -240,11 +244,15 @@
         <div class="entry-meta">
         <ul>
             <li class="movie-runtime">
-                <i class="icon-clock"></i><?php echo ($movie_meta['sp_runtime'][0]) ? $movie_meta['sp_runtime'][0] . ' Minutes' : 'Not available'; ?>
+                <i class="icon-clock"></i><?php echo (!empty($movie_meta['sp_runtime'][0])) ? $movie_meta['sp_runtime'][0] . ' Minutes' : 'Not available'; ?>
             </li>
             <li>Rating: <?php echo strtoupper($movie_meta['sp_movie_rating'][0]); ?></li>
+            <?php if ( $movie_meta['sp_genre'][0] != '' ) : ?>
         	<li>Genre: <?php echo $movie_meta['sp_genre'][0]; ?></li>
+            <?php endif; ?>
+            <?php if ( $movie_meta['sp_content_advice'][0] != '' ) : ?>
         	<li>Content Advice: <?php echo $movie_meta['sp_content_advice'][0]; ?></li>
+            <?php endif; ?>
         	<li>Release Date: <?php echo esc_html( get_the_date() ); ?></li>
         </ul>
         </div>
