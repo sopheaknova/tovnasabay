@@ -41,7 +41,7 @@ function sp_set_default_object_terms( $post_id, $post ) {
             //'post_tag' => array( 'taco', 'banana' ),
             'sp_classification' => array( 'Uncategorized' ),
             'sp_city' => array( 'Phnom Penh' ),
-            'sp_cinema' => array( 'Legend' )
+            'sp_cinema' => array( 'Legend Cinema' )
             );
         $taxonomies = get_object_taxonomies( $post->post_type );
         foreach ( (array) $taxonomies as $taxonomy ) {
