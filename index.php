@@ -122,7 +122,7 @@
 						},
 						computor: { 
 							changePoint:940,
-							visibleItems: 4
+							visibleItems: 3
 						}
 					}
 				});
