@@ -166,13 +166,13 @@
                         },
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                   }
-                  var map = new google.maps.Map(document.getElementById('cinema-map'), mapOptions);                
+                  var map = new google.maps.Map(document.getElementById('cinema-map'), mapOptions);            
                   var marker = new google.maps.Marker({
                     map: map,
                     position: point,
                     title: "<?php echo $term->name;?>"
                   });
-                  infowindow.open(map,marker);
+                  //infowindow.open(map,marker);
                 });
         </script>
 
