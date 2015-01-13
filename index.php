@@ -109,7 +109,7 @@
 					enableResponsiveBreakpoints: true,
 					responsiveBreakpoints: { 
 						portrait: { 
-							changePoint:380,
+							changePoint:440,
 							visibleItems: 1
 						},
 						iphone: { 
