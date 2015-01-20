@@ -1,12 +1,3 @@
-/*
-	post-formats.js
-	
-	License: GNU General Public License v3.0
-	License URI: http://www.gnu.org/licenses/gpl-3.0.html
-	
-	Copyright: (c) 2013 Jermaine Maree, http://jermainemaree.com
-*/
-
 jQuery(document).ready(function($) {
 
 	var _custom_media = true,

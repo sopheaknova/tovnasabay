@@ -39,7 +39,7 @@
   /*  Toggle between cinemas video trailer and map with location       
   /*--------------------------------------------------------------------------------------*/
   $(window).load(function () {
-      $('.map').addClass('map-hide');
+      $('.single-sp_movie .map').addClass('map-hide');
   })
   $('#map-switch').click(function(ev){
       ev.preventDefault();

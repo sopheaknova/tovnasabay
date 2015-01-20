@@ -402,8 +402,14 @@ $post_type_atm = array(
 		array(
 			'label'		=> 'Bank Name',
 			'id'		=> $prefix . 'atm_bank',
-			'type'		=> 'custom-post-type-select',
-			'post_type' => 'sp_listing',
+			'type'		=> 'taxonomy-select',
+			'taxonomy' 	=> 'sp_atm_bank',
+		),
+		array(
+			'label'		=> 'Location',
+			'id'		=> $prefix . 'atm_bank_location',
+			'type'		=> 'taxonomy-select',
+			'taxonomy' 	=> 'sp_city',
 		)
 	)
 );	

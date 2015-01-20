@@ -26,6 +26,12 @@
 		//CP list table columns
 		add_action( 'manage_posts_custom_column', 'sp_atm_cp_custom_column' );
 
+		// Remove/Unset ATMs taxonomy
+		add_action( 'admin_init', 'sp_remove_atm_taxonomy' );
+
+		// Save ATMs post
+		add_action( 'save_post', 'sp_save_atm' );
+
 	//FILTERS
 		//CP list table columns
 		add_filter( 'manage_edit-sp_atm_columns', 'sp_atm_cp_columns' );
@@ -135,5 +141,32 @@
 			}
 		}
 	} // /sp_atm_cp_custom_column
+
+
+	/*
+	* Custom function
+	*
+	*/
+	if ( ! function_exists( 'sp_remove_atm_taxonomy' ) ) {
+		function sp_remove_atm_taxonomy(){
+			remove_meta_box( 'sp_atm_bankdiv', 'sp_atm', 'side' );
+			remove_meta_box( 'sp_citydiv', 'sp_atm', 'side' );
+		}
+	}
+
+	/*
+	* Update meta position value on position term
+	* 
+	*/
+	if ( ! function_exists( 'sp_save_atm' ) ) {
+		function sp_save_atm( $post_id ) {
+			global $post;
+			if (get_post_type() == 'sp_atm') {
+				if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return $post_id;
+				wp_set_post_terms( $post->ID, $_POST['sp_atm_bank'], 'sp_atm_bank' );
+				wp_set_post_terms( $post->ID, $_POST['sp_atm_bank_location'], 'sp_city' );
+			}
+		}
+	}
 
 	
