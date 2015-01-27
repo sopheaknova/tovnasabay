@@ -15,14 +15,14 @@ Template Name: ATM page
                   <option value="all" selected="selected">All ATMs</option>
                   <?php $taxonmies = get_terms( 'sp_atm_bank' ); ?>
                   <?php foreach ($taxonmies as $term) { ?>
-                    <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+                    <option <?php if($_POST['atm_bank'] == $term->term_id ) { echo ' selected="selected"'; } ?> value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
                   <?php } ?>
                 </select>
                 <select id="atm-location" name="atm_location" class="one-fourth">
                   <option value="all" selected="selected">All Locations</option>
                   <?php $taxonmies = get_terms( 'sp_city' ); ?>
                   <?php foreach ($taxonmies as $term) { ?>
-                    <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+                    <option <?php if($_POST['atm_location'] == $term->term_id ) { echo ' selected="selected"'; } ?> value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
                   <?php } ?>
                 </select>
                 <input id="submit" type="submit" value="Search" name="is_submit" class="one-fourth last">
@@ -31,26 +31,12 @@ Template Name: ATM page
             <div id="map-canvas"></div>
         </div>
     </div>
-    <script type="text/javascript" src="https://raw.githubusercontent.com/carhartl/jquery-cookie/master/src/jquery.cookie.js"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
     <script type="text/javascript">
 
         jQuery(document).ready(function ($){
-
-         if($.cookie('category_panel') != null) {
-              $('#atm-bank option[value="' + $.cookie('atm-bank') + '"]').attr('selected', 'selected');
-              $('#atm-location option[value="' + $.cookie('atm-location') + '"]').attr('selected', 'selected');
-          }
-
-          $('#atm-bank').change(function() {
-              $.cookie('atm-bank', $('#atm-bank option:selected').val(), { expires: 90, path: '/'});
-          });
-
-           $('#atm-location').change(function() {
-             $.cookie('atm-location', $('#atm-location option:selected').val(), { expires: 90, path: '/'});
-          });
 
           var LocationData = [
 
@@ -172,7 +158,7 @@ Template Name: ATM page
         width: 100px;
       }
       #category_panel #atm-bank, #category_panel #atm-location  {
-        padding: 1px 36px 1px 5px;
+        /*padding: 1px;*/
       }
       @media screen and (max-width: 580px) {
         #category_panel {
