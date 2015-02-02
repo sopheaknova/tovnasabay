@@ -203,7 +203,13 @@
 								),
 						),
 						'order'				=> 	'ASC',
-						'orderby'			=> 	'rand'
+						'orderby'			=> 	'rand',
+						'date_query' 		=> array(
+													array(
+														'year' => date( 'Y' ),
+														'month' => date( 'm' ),
+													),
+						),
 					);
 					$custom_query = new WP_Query( $args ); ?>
 
