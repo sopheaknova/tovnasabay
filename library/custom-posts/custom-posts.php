@@ -20,7 +20,7 @@ load_template( SP_BASE_DIR . '/library/custom-posts/cp-listing.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-atm.php' );
 
 //Taxonomies
-//load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-classification.php' );
+load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-classification.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-atm.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-city.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-cinema.php' );

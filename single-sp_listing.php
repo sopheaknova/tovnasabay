@@ -79,10 +79,24 @@
 				    </script>
 					<div id="listing-map" style="height:350px;"></div>
 
-					<div class="entry-content listing-profile content-padding-side">
+					<div class="entry-content listing-profile content-padding-side clearfix">
 						<?php the_content(); ?>
 					</div><!-- .entry-content -->
 
+					<div class="entry-image clearfix">
+						<?php $images = get_post_meta( $post->ID, 'sp_gallery', true );
+	                        $array_image = explode( ',', $images ); 
+	                        foreach ($array_image as $image) {           
+	                        $image_url = wp_get_attachment_image_src( $image, 'full');
+	                     ?>
+	                    <div class="one-third">
+							<img src="<?php echo $image_url[0]; ?>">
+						</div>
+						<?php } ?>
+					</div>
+						
+
+					
 				</article><!-- #post -->
 
 		<?php		
