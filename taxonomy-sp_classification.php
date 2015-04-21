@@ -18,20 +18,35 @@
             </header><!-- .page-header --> 
 
             <?php 
-                
-                // Start the Loop.
-                while ( have_posts() ) : the_post();
+                while ( have_posts() ) : the_post(); ?>
+                <div class="sp-wrap-post-thumb content-padding-side">
+                    <div class="sp-post-info">
+                        <h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                        <?php $listing_meta = get_post_meta( $post->ID ); ?>
+                        <span><?php echo $listing_meta['sp_lt_address'][0]; ?></span>
+                        <?php 
+                            $comm_lines = unserialize($listing_meta['sp_lt_comm_line'][0]);
+                            if ( !empty($comm_lines) ) :
+                                $out = '<ul class="comm-line">';
+                                foreach ($comm_lines as $comm_line ) {
+                                    $comm_type = $comm_line['sp_lt_comm_type'];
+                                    $comm_value = $comm_line['sp_lt_comm_value']; 
 
-                    /*
-                     * Include the post format-specific template for the content. If you want to
-                     * use this in a child theme, then include a file called called content-___.php
-                     * (where ___ is the post format) and that will be used instead.
-                     */
-                    get_template_part( 'templates/posts/content', get_post_format() );
-
-                endwhile;
-            
-                    // Pagination
+                                    if ( $comm_type == 'e-mail' ) {
+                                        $out .= '<li><span class="attr">' . $comm_type . '</span><span class="value"><a href="mailto:' . $comm_value . '">' . $comm_value . '</a></span></li>'; 
+                                    } elseif ( $comm_type == 'website' ) {
+                                        $out .= '<li><span class="attr">' . $comm_type . '</span><span class="value"><a href="http://' . $comm_value . '" target="_blank">' . $comm_value . '</a></span></li>'; 
+                                    } else {
+                                        $out .= '<li><span class="attr">' . $comm_type . '</span><span class="value">' . $comm_value . '</span></li>';
+                                    }
+                                }
+                                $out .= '</ul>';
+                                echo $out;
+                            endif;
+                        ?>
+                    </div>
+                </div>
+            <?php endwhile;
                     if(function_exists('wp_pagenavi'))
                         wp_pagenavi();
                     else 

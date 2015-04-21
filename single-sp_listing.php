@@ -87,10 +87,10 @@
 						<?php $images = get_post_meta( $post->ID, 'sp_gallery', true );
 	                        $array_image = explode( ',', $images ); 
 	                        foreach ($array_image as $image) {           
-	                        $image_url = wp_get_attachment_image_src( $image, 'full');
+	                        $image_url = wp_get_attachment_image_src( $image, 'medium');
 	                     ?>
 	                    <div class="one-third">
-							<img src="<?php echo $image_url[0]; ?>">
+							<a class="cw-magnificpopup-wrapper cw-magnificpopup-image" href="<?php echo $image_url[0]; ?>"><img src="<?php echo $image_url[0]; ?>"></a>
 						</div>
 						<?php } ?>
 					</div>
