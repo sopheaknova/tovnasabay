@@ -15,7 +15,7 @@
 		?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+					<div class="entry-header content-padding-side">
 					<div class="one-third">
 						<?php the_post_thumbnail( 'medium' ); ?>
 					</div>
@@ -53,6 +53,7 @@
 					</div> <!-- .one-third .last -->
 
 					<div class="clear"></div>
+					</div> <!-- .content-padding-side -->
 
 					<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 				    <script type="text/javascript">
@@ -78,7 +79,7 @@
 				    </script>
 					<div id="listing-map" style="height:350px;"></div>
 
-					<div class="entry-content">
+					<div class="entry-content listing-profile content-padding-side">
 						<?php the_content(); ?>
 					</div><!-- .entry-content -->
 

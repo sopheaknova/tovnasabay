@@ -372,6 +372,12 @@ $post_type_listing = array(
 				)
 			)
 		),
+		array(
+			'label'		=> 'Gallery',
+			'id'		=> $prefix . 'gallery',
+			'type'		=> 'gallery',
+			'desc'		=> 'Upload image gallery for listing'
+		),
 	)
 );	
 
