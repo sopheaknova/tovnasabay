@@ -83,6 +83,7 @@
 						<?php the_content(); ?>
 					</div><!-- .entry-content -->
 
+					<?php if ( get_post_meta( $post->ID, 'sp_gallery', true ) != '' ) : ?>
 					<div class="entry-image clearfix">
 						<?php $images = get_post_meta( $post->ID, 'sp_gallery', true );
 	                        $array_image = explode( ',', $images ); 
@@ -94,7 +95,7 @@
 						</div>
 						<?php } ?>
 					</div>
-						
+					<?php endif; ?>	
 
 					
 				</article><!-- #post -->
