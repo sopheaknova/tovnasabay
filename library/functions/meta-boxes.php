@@ -359,8 +359,8 @@ $post_type_listing = array(
 				            'src'         => ''
 				          ),
 						array(
-				            'value'       => 'swift',
-				            'label'       => 'Swift',
+				            'value'       => 'hours',
+				            'label'       => 'Hours',
 				            'src'         => ''
 				          )
 					)
