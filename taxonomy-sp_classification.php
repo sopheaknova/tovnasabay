@@ -20,7 +20,10 @@
             <?php 
                 while ( have_posts() ) : the_post(); ?>
                 <div class="sp-wrap-post-thumb content-padding-side">
-                    <div class="sp-post-info">
+                    <div class="sp-post-thumb one-fourth">
+                        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_post_thumbnail( 'medium' ); ?></a>
+                    </div>
+                    <div class="sp-post-info three-fourth last">
                         <h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
                         <?php $listing_meta = get_post_meta( $post->ID ); ?>
                         <span><?php echo $listing_meta['sp_lt_address'][0]; ?></span>
