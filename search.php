@@ -13,10 +13,10 @@
         
     <?php if ( have_posts() ) : ?>
 
-            <header class="page-header">
-                <h1 class="page-title">
-                    <?php _e('For the term', SP_TEXT_DOMAIN); ?> "<span><?php echo get_search_query(); ?></span>".
-                </h1>
+            <header class="page-header content-padding-side">
+                <h2 class="page-title">
+                    <?php _e('For the term', SP_TEXT_DOMAIN); ?> "<span><?php echo get_search_query(); ?></span>"
+                </h2>
             </header><!-- .page-header --> 
 
             <?php 
