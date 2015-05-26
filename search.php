@@ -23,15 +23,24 @@
                 
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
-
-                    /*
+            ?>
+                    <!-- /*
                      * Include the post format-specific template for the content. If you want to
                      * use this in a child theme, then include a file called called content-___.php
                      * (where ___ is the post format) and that will be used instead.
-                     */
-                    get_template_part( 'templates/posts/content', get_post_format() );
+                     */ -->
+                    <div class="sp-wrap-post-thumb content-padding-side">
+                    <div class="sp-post-thumb one-fourth">
+                        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_post_thumbnail( 'medium' ); ?></a>
+                    </div>
+                    <div class="sp-post-info three-fourth last">
+                        <h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                        <div class="entry-meta"><?php echo esc_html( get_the_date() ); ?></div>
+                        <div class="sp-excerpt"><?php the_excerpt(); ?></div>
+                    </div>
+                </div>
 
-                endwhile;
+            <?php   endwhile;
             
                     // Pagination
                     if(function_exists('wp_pagenavi'))

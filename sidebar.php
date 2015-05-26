@@ -13,6 +13,12 @@ global $post;
 ?>
 
 	<aside id="sidebar" class="sidebar" role="complementary">
+		<div class="widget">
+			<div class="widget-title">
+				<h4>Search</h4>
+			</div>
+			<?php get_search_form(); ?>
+		</div>
 		<?php
 			$args = array(
 					'post_type'			=> 'sp_movie',
