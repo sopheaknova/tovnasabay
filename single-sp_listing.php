@@ -17,7 +17,14 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-header content-padding-side">
 					<div class="one-third">
-						<?php the_post_thumbnail( 'medium' ); ?>
+						<?php 
+                            if ( has_post_thumbnail() ) {
+                                the_post_thumbnail( 'medium' );
+                            }
+                            else {
+                                echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/assets/images/demo/no-image.png" />';
+                            }
+                         ?>
 					</div>
 					
 					<div class="two-third last">
