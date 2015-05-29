@@ -21,7 +21,15 @@
                 while ( have_posts() ) : the_post(); ?>
                 <div class="sp-wrap-post-thumb content-padding-side">
                     <div class="sp-post-thumb one-fourth">
-                        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_post_thumbnail( 'medium' ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+                        <?php 
+                            if ( has_post_thumbnail() ) {
+                                the_post_thumbnail( 'medium' );
+                            }
+                            else {
+                                echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/assets/images/demo/no-image.png" />';
+                            }
+                         ?></a>
                     </div>
                     <div class="sp-post-info three-fourth last">
                         <h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
