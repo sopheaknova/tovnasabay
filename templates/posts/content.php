@@ -10,7 +10,7 @@
 	
 	<?php if ( is_single() ) : ?>
 	<header class="entry-header content-padding-side">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<h2 class="entry-title"><?php the_title(); ?></h2>
 		<div class="entry-meta">
 			<?php
 				if ( 'post' == get_post_type() )
