@@ -10,7 +10,10 @@ Template Name: ATM page
     <div id="content-container">
         <div class="container clearfix">
             <form id="category_panel" action="" method="POST" class="clearfix">
-                <h2 class="entry-title">ATMs</h2>
+                <?php
+                // Page thumbnail and title.
+                  the_title( '<header class="entry-header content-padding-side"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+                ?>
                 <select id="atm-bank" name="atm_bank" class="one-fourth">
                   <option value="all" selected="selected">All ATMs</option>
                   <?php $taxonmies = get_terms( 'sp_atm_bank' ); ?>
