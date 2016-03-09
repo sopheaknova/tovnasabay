@@ -90,7 +90,7 @@
 		endif; ?>
 
 		<?php $showtime_page = ot_get_option('showtime_page'); ?>
-		<center><a class="button" href="<?php echo get_permalink($showtime_page); ?>">More movie in Showtime</a></center>
+		<center><a class="button" href="<?php echo get_permalink($showtime_page); ?>">More movies >></a></center>
 
 	</div>
 
@@ -139,7 +139,7 @@
 				'date_query' 		=> array(
 											array(
 												'month' => date( 'm' ),
-												'compare' => '>'
+												'compare' => '<'
 											),
 				)
 			);

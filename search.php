@@ -15,7 +15,7 @@
 
             <header class="page-header content-padding-side">
                 <h2 class="page-title">
-                    <?php _e('For the term', SP_TEXT_DOMAIN); ?> "<span><?php echo get_search_query(); ?></span>"
+                    <?php _e('For the search', SP_TEXT_DOMAIN); ?> "<span><?php echo get_search_query(); ?></span>"
                 </h2>
             </header><!-- .page-header --> 
 
@@ -57,7 +57,7 @@
             ?> 
     <?php 
         else : 
-            get_template_part( 'templates/contents/no-results' );
+            get_template_part( 'templates/no-results' );
         endif; 
     ?>
     

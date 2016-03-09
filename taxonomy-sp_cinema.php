@@ -156,7 +156,7 @@
                     var mapOptions = {  
                         zoom: 14,
                         center: center,
-                        styles: styles,
+                        // styles: styles,
                         scrollwheel: false,
                         zoomControl: true,
                         disableDefaultUI: true,
@@ -179,7 +179,7 @@
     <div id="cinema-map"></div>
 
     <div class="content-padding-side">
-    <h4 class="sp-block-title"><span>Showtime in <?php echo $term->name; ?></span></h4>
+    <h4 class="sp-block-title"><span>What's Showing in <?php echo $term->name; ?></span></h4>
     <?php
         $args = array(
                 'post_type'         => 'sp_movie',
@@ -220,7 +220,7 @@
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'sp_cinema',
-                        'field'    => 'id',
+                        'field'    => 'id',                         
                         'terms'    => array( $term->term_id ),
                     ),
                 ),
@@ -229,7 +229,7 @@
                 'date_query'        => array(
                                             array(
                                                 'month' => date( 'm' ),
-                                                'compare' => '>'
+                                                'compare' => '<'
                                             ),
                 )
             );

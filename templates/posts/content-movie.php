@@ -46,8 +46,8 @@
 			<?php the_content(); ?>
 		</div><!-- .entry-content -->
 		<center><a id="map-switch" href="#" class="button yellow">
-			<span class="show-map">Show available ticket for this movie</span>
-			<span class="show-video">Show Video Trailer</span>
+			<span class="show-map">Show available Cinemas for this movie</span>
+			<span class="show-video">Show Movie Trailer</span>
 		</a></center>
 
 		<div class="video-trailer">
@@ -197,8 +197,8 @@
                     ];
 				  	var styled_map = new google.maps.StyledMapType(map_style, {name: "Cusmome style"});
 
-                    map.mapTypes.set('map_styles', styled_map);
-                    map.setMapTypeId('map_styles');
+                    // map.mapTypes.set('map_styles', styled_map);
+                    // map.setMapTypeId('map_styles');
 
 			  		var infowindow = new google.maps.InfoWindow();
 					var bounds = new google.maps.LatLngBounds();

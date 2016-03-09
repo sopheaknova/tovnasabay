@@ -64,7 +64,7 @@
                 </div><!-- .brand -->
 
                 <div class="banner-top">
-                    <a href="#"><img src="<?php echo SP_ASSETS; ?>/images/demo/bannermovie.gif"></a>
+                    <a href="http://www.tovnasabay.com/whats-showing/"><img src="<?php echo SP_ASSETS; ?>/images/demo/bannermovie.gif"></a>
                 </div> <!-- .banner-top -->
             </div> <!-- .container .clearfix -->
         </header><!-- #header -->
